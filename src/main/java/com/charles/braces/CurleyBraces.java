@@ -23,7 +23,6 @@ public class CurleyBraces {
 	}
 	
 	public CurleyBraces(){
-//		System.out.println(this.greetings);
 		System.out.println(changeme);
 		System.out.println(greetings);
 	}

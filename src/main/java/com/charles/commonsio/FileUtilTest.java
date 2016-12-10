@@ -7,13 +7,7 @@ import org.apache.commons.io.FileSystemUtils;
 import org.apache.commons.io.FileUtils;
 
 public class FileUtilTest {
-
-	/**
-	 * @param args
-	 * @throws IOException 
-	 */
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
 		
 		System.out.println(FileUtils.ONE_GB);
 		System.out.println(FileUtils.byteCountToDisplaySize(FileUtils.ONE_GB));
