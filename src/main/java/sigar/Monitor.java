@@ -16,12 +16,12 @@ public class Monitor {
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		Uptime u = new Uptime();
-		System.out.println(u.getUptime());
-		System.out.println(u.toString());
+		System.out.p(u.getUptime());
+		System.out.p(u.toString());
 		
 		ProcCpu cpu = new ProcCpu();
-		System.out.println(cpu.getLastTime());
-		System.out.println(cpu.toString());
+		System.out.p(cpu.getLastTime());
+		System.out.p(cpu.toString());
 		
 		FileSystemUtils fsUtils = new FileSystemUtils();
 		
