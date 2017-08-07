@@ -1,9 +1,8 @@
 package datastructures;
 
-import datastructures.MyBST.Node;
+import datastructures.BinarySearchTree.Node;
 
-public interface Tree {
+public interface Tree<T> {
 
-	
-	public void add(Node n);
+    public void add(Node<T> n);
 }

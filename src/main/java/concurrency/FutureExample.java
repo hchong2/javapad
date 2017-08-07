@@ -1,6 +1,6 @@
-package futures;
+package concurrency;
 
-public class Example {
+public class FutureExample {
 
     public static void main(String[] args) {
 	// TODO Auto-generated method stub
