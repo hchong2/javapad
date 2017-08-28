@@ -2,10 +2,6 @@ package braces;
 
 public class CurleyBraces {
 
-    /**
-     * @param args
-     */
-
     String changeme = "hi";
 
     static {

@@ -7,14 +7,14 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class Main {
 
-	public static void main(String [] args) throws Exception{
-		
-		File f = new File(".");
-		System.out.println(f.getAbsolutePath());
-		
-		String appCtxPath = "./src/main/appCtx/appCtx.xml";
-		
-		ApplicationContext ctx = new FileSystemXmlApplicationContext(appCtxPath);
-		System.out.println("Main Class");
-	}
+    public static void main(String[] args) throws Exception {
+
+	File f = new File(".");
+	System.out.println(f.getAbsolutePath());
+
+	String appCtxPath = "./src/main/appCtx/appCtx.xml";
+
+	ApplicationContext ctx = new FileSystemXmlApplicationContext(appCtxPath);
+	System.out.println("Main Class");
+    }
 }

@@ -8,21 +8,22 @@ import org.eclipse.jetty.util.thread.ExecutorThreadPool;
 
 public class Foo {
 
-	public static void main(String[] args) throws Exception {
-		
-		int queueSize = 200;
-		int minThreads = 5;
-		int maxThreads = 10;
-		long maxIdleTime = 30000;
-		
-		Server server = new Server();
-		LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>(queueSize);
-		
-		ExecutorThreadPool pool = new ExecutorThreadPool(minThreads, maxThreads, maxIdleTime, TimeUnit.MILLISECONDS, queue);
-		server.setThreadPool(pool);
-		
-		server.start();
-		
-	}
+    public static void main(String[] args) throws Exception {
+
+	int queueSize = 200;
+	int minThreads = 5;
+	int maxThreads = 10;
+	long maxIdleTime = 30000;
+
+	Server server = new Server();
+	LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>(queueSize);
+
+	ExecutorThreadPool pool = new ExecutorThreadPool(minThreads, maxThreads, maxIdleTime, TimeUnit.MILLISECONDS,
+		queue);
+	server.setThreadPool(pool);
+
+	server.start();
+
+    }
 
 }
