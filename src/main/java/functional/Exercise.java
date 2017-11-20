@@ -1,11 +1,15 @@
-package function;
+package functional;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -14,6 +18,9 @@ import org.junit.Test;
 
 public class Exercise {
 
+	/**
+	 * http://www.deadcoderising.com/2015-09-07-java-8-functional-composition-using-compose-and-andthen/
+	 */
 	// Function
 	@Test
 	public void functionTest() {
@@ -94,9 +101,27 @@ public class Exercise {
 			BiFunction<String, List<Article>, Optional<Article>> newestByAuthor = byAuthor.andThen(newest);
 			BiFunction<String, List<Article>, List<Article>> byAuthorSorted = byAuthor.andThen(sortByDate);
 			BiFunction<String, List<Article>, Optional<Article>> newestByTag = byTag.andThen(newest);
-
 		}
+	}
 
+	@Test
+	public void bipredicateTest() {
+		BiPredicate<Integer, String> condition = (i, s) -> i > 20 && s.startsWith("R");
+		BiPredicate<Integer, String> cond2 = condition.and((a, b) -> a < 50 && b.contains("lol"));
+
+		Assert.assertTrue(condition.test(21, "R"));
+		Assert.assertTrue(cond2.test(30, "Rlol"));
+	}
+
+	@Test
+	public void biconsumerTest() {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("a", 1);
+		map.put("b", 2);
+		map.put("c", 3);
+		BiConsumer<String, Integer> bicons = (key, value) -> System.out
+				.println(String.format("Key: %s Value: %d", key, value));
+		map.forEach(bicons);
 	}
 
 	public static void p(Object o) {
