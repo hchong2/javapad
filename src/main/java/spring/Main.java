@@ -12,7 +12,7 @@ public class Main {
 	File f = new File(".");
 	System.out.println(f.getAbsolutePath());
 
-	String appCtxPath = "./src/main/appCtx/appCtx.xml";
+	String appCtxPath = "./src/main/applicationContext.xml";
 
 	ApplicationContext ctx = new FileSystemXmlApplicationContext(appCtxPath);
 	System.out.println("Main Class");
